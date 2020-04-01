@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="newReport" pageWidth="396" pageHeight="612" columnWidth="356" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ade6df73-b422-4599-ac57-8ef3b2f17973">
+	<property name="ireport.zoom" value="2.732053821460316"/>
+	<property name="ireport.x" value="286"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Laptown" uuid="4bd49bbc-41ca-494f-a59e-3c95855f3484">
+		<queryString language="SQL">
+			<![CDATA[Select
+	R.ID_Reportes as Folio,
+	R.fecha_Reportes as 'Fecha y hora',
+	nombre_Empleado as Empleado,
+	nombre_Clientes as Cliente,
+	calle_Clientes as Calle,
+	colonia_Clientes as Colonia,
+	numeroCasa_Clientes as Num,
+	telefono_Clientes as Telefono,
+	telefono2_Clientes as 'Telefono 2',
+	ciudad_Clientes as Ciudad,
+	correo_Clientes as Correo,
+	tipo_Equipo as Equipo,
+	marca_Equipo as Marca,
+	modelo_Equipo as Modelo,
+	ns_Equipo as 'N.S. Equipo',
+	nsCargador_Equipo as 'N.S. Cargador',
+	nsBateria_Equipo as 'N.S. Bateria',
+	fallas_Equipo as Fallas,
+	prediagnostico_Equipo as Prediagnostico,
+	respaldo_Equipo as Respaldo,
+	servicios_Equipo as Servicio,
+	servicio2_Equipo as Servicio2,
+	servicio3_Equipo as Servicio3,
+	servicio4_Equipo as Servicio4,
+	precio_Reporte as Precio,
+	precio2_Reporte as Precio2,
+	precio3_Reporte as Precio3,
+	precio4_Reporte as Precio4,
+	observaciones_Equipo as Observaciones,
+	anticipo_Reporte as Anticipo
+from
+	Reportes as R
+Inner join
+	Clientes as C
+on
+	R.cliente_Reportes = C.ID_Clientes
+Inner join
+	Empleados as E
+on
+	R.empleado_Reporte = E.ID_Empleados
+where
+	ID_Reportes = 1;]]>
+		</queryString>
+		<field name="Folio" class="java.lang.Integer"/>
+		<field name="Fecha y hora" class="java.lang.String"/>
+		<field name="Empleado" class="java.lang.String"/>
+		<field name="Cliente" class="java.lang.String"/>
+		<field name="Calle" class="java.lang.String"/>
+		<field name="Colonia" class="java.lang.String"/>
+		<field name="Num" class="java.lang.String"/>
+		<field name="Telefono" class="java.lang.String"/>
+		<field name="Telefono 2" class="java.lang.String"/>
+		<field name="Ciudad" class="java.lang.String"/>
+		<field name="Correo" class="java.lang.String"/>
+		<field name="Equipo" class="java.lang.String"/>
+		<field name="Marca" class="java.lang.String"/>
+		<field name="Modelo" class="java.lang.String"/>
+		<field name="N.S. Equipo" class="java.lang.String"/>
+		<field name="N.S. Cargador" class="java.lang.String"/>
+		<field name="N.S. Bateria" class="java.lang.String"/>
+		<field name="Fallas" class="java.lang.String"/>
+		<field name="Prediagnostico" class="java.lang.String"/>
+		<field name="Respaldo" class="java.lang.String"/>
+		<field name="Servicio" class="java.lang.String"/>
+		<field name="Servicio2" class="java.lang.String"/>
+		<field name="Servicio3" class="java.lang.String"/>
+		<field name="Servicio4" class="java.lang.String"/>
+		<field name="Precio" class="java.lang.Integer"/>
+		<field name="Precio2" class="java.lang.Integer"/>
+		<field name="Precio3" class="java.lang.Integer"/>
+		<field name="Precio4" class="java.lang.Integer"/>
+		<field name="Observaciones" class="java.lang.String"/>
+		<field name="Anticipo" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select
+	R.ID_Reportes as Folio,
+	R.fecha_Reportes as 'Fecha y hora',
+	nombre_Empleado as Empleado,
+	nombre_Clientes as Cliente,
+	calle_Clientes as Calle,
+	colonia_Clientes as Colonia,
+	numeroCasa_Clientes as Num,
+	telefono_Clientes as Telefono,
+	telefono2_Clientes as 'Telefono 2',
+	ciudad_Clientes as Ciudad,
+	correo_Clientes as Correo,
+	tipo_Equipo as Equipo,
+	marca_Equipo as Marca,
+	modelo_Equipo as Modelo,
+	ns_Equipo as 'N.S. Equipo',
+	nsCargador_Equipo as 'N.S. Cargador',
+	nsBateria_Equipo as 'N.S. Bateria',
+	fallas_Equipo as Fallas,
+	prediagnostico_Equipo as Prediagnostico,
+	respaldo_Equipo as Respaldo,
+	servicios_Equipo as Servicio,
+	servicio2_Equipo as Servicio2,
+	servicio3_Equipo as Servicio3,
+	servicio4_Equipo as Servicio4,
+	precio_Reporte as Precio,
+	precio2_Reporte as Precio2,
+	precio3_Reporte as Precio3,
+	precio4_Reporte as Precio4,
+	observaciones_Equipo as Observaciones,
+	anticipo_Reporte as Anticipo
+from
+	Reportes as R
+Inner join
+	Clientes as C
+on
+	R.cliente_Reportes = C.ID_Clientes
+Inner join
+	Empleados as E
+on
+	R.empleado_Reporte = E.ID_Empleados
+where
+	ID_Reportes = $P{ID};]]>
+	</queryString>
+	<field name="Folio" class="java.lang.Integer"/>
+	<field name="Fecha y hora" class="java.lang.String"/>
+	<field name="Empleado" class="java.lang.String"/>
+	<field name="Cliente" class="java.lang.String"/>
+	<field name="Calle" class="java.lang.String"/>
+	<field name="Colonia" class="java.lang.String"/>
+	<field name="Num" class="java.lang.String"/>
+	<field name="Telefono" class="java.lang.String"/>
+	<field name="Telefono 2" class="java.lang.String"/>
+	<field name="Ciudad" class="java.lang.String"/>
+	<field name="Correo" class="java.lang.String"/>
+	<field name="Equipo" class="java.lang.String"/>
+	<field name="Marca" class="java.lang.String"/>
+	<field name="Modelo" class="java.lang.String"/>
+	<field name="N.S. Equipo" class="java.lang.String"/>
+	<field name="N.S. Cargador" class="java.lang.String"/>
+	<field name="N.S. Bateria" class="java.lang.String"/>
+	<field name="Fallas" class="java.lang.String"/>
+	<field name="Prediagnostico" class="java.lang.String"/>
+	<field name="Respaldo" class="java.lang.String"/>
+	<field name="Servicio" class="java.lang.String"/>
+	<field name="Servicio2" class="java.lang.String"/>
+	<field name="Servicio3" class="java.lang.String"/>
+	<field name="Servicio4" class="java.lang.String"/>
+	<field name="Precio" class="java.lang.Integer"/>
+	<field name="Precio2" class="java.lang.Integer"/>
+	<field name="Precio3" class="java.lang.Integer"/>
+	<field name="Precio4" class="java.lang.Integer"/>
+	<field name="Observaciones" class="java.lang.String"/>
+	<field name="Anticipo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="3" y="2" width="65" height="51" uuid="fa481643-903a-4698-81e7-5a84cedb7b7c"/>
+				<imageExpression><![CDATA["C:\\Program Files\\Laptown\\Images\\Logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="124" y="5" width="107" height="14" uuid="f50312e1-63b5-44db-af39-66dbe03c68fd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[ORDEN DE ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="23" width="25" height="11" uuid="56425558-b114-42d5-9745-10f206a4aa4d"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Folio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="23" width="30" height="11" uuid="a6f60392-ab31-4f0f-8523-44586eaa0c13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Folio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="104" y="38" width="60" height="11" uuid="dc7645d0-4609-4355-bbce-7eb4a0ba5db8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha y hora:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="38" width="98" height="11" uuid="a00528d1-33e2-464d-8904-da890724e5ba"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha y hora}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="10" width="77" height="9" forecolor="#000000" uuid="9dc25cdb-bf75-424b-b3bf-50809ecf91cc"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Av. Universidad 911A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="40" width="71" height="9" forecolor="#000000" uuid="c6be343e-04a3-4f2b-b998-19d72dfa6a31"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel. (449) 361 0419]]></text>
+			</staticText>
+			<line>
+				<reportElement x="273" y="1" width="1" height="56" forecolor="#327DBF" uuid="3375123b-147c-4da1-aae2-af5cd235f766"/>
+			</line>
+			<staticText>
+				<reportElement x="278" y="30" width="43" height="9" forecolor="#000000" uuid="15d0547d-ae80-4b34-89c7-cf4406dab58b"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.P. 20130]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="20" width="78" height="9" forecolor="#000000" uuid="b9548bce-3904-4582-9a10-8d7750f38d60"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bosques del Prado Sur]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="503" splitType="Stretch">
+			<rectangle>
+				<reportElement x="283" y="250" width="73" height="14" uuid="89d60610-8a5c-419f-9bb8-2af0bf067710"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="283" y="236" width="73" height="14" uuid="2ae7011e-3fe6-499f-979d-2fe8c8d1d1f5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="250" width="283" height="14" uuid="a171876a-d42a-4c5d-be3e-627e627e791b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="179" y="136" width="177" height="95" uuid="dda55f46-1e13-4bc4-a99e-b756951e206c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="136" width="177" height="95" uuid="53474c84-d5d5-451f-ba9c-646d55bcb60b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="17" width="356" height="63" uuid="6dc26905-288f-4f64-8dbd-7debf9a45b09"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="43" y="21" width="307" height="11" uuid="03f19f9d-b71f-4b0d-a70f-ee1cad9e4e04"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="21" width="35" height="11" uuid="ecfc3cfe-0da2-40a9-b52a-0329aa250f56"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="36" width="47" height="11" uuid="84db46ce-cf9c-4ef6-8b43-2f357ec53fc7"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="36" width="296" height="11" uuid="15f49520-5792-4567-b830-d85d2f0e4892"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Calle} + " " + $F{Num} + ", " + $F{Colonia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="51" width="35" height="11" uuid="747b3ab9-22ad-4c20-bfef-b0615a529c99"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Correo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="42" y="51" width="178" height="11" uuid="26c7c71c-b7a7-4b71-8eea-bcacadae43e1"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Correo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="66" width="19" height="11" uuid="2590a600-c243-494a-a971-f1397f430f7f"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel.:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="25" y="66" width="148" height="11" uuid="c40311dc-6ad5-4e59-941b-5a380a044d62"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="179" y="66" width="27" height="11" uuid="354330c9-782b-41e3-ae0f-d2301a6faaf7"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel. 2:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="210" y="66" width="140" height="11" uuid="c33cf3d3-7ea8-41f8-a169-6726c5f87410"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefono 2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="228" y="51" width="34" height="11" uuid="11e2cedc-1398-4841-891b-5188a4cfcbf7"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ciudad:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="266" y="51" width="84" height="11" uuid="2f04132a-cb74-4fa1-bbbe-a35087ffb5ee"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ciudad}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="85" width="356" height="47" uuid="1c947025-d247-41b1-b4c6-3078dc80d4a9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="89" width="35" height="11" uuid="b92568d6-5a54-4b68-bac1-1966ff572b8a"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Equipo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="61" y="103" width="112" height="11" uuid="3d3d1a16-ebec-41f9-b58f-16cf0325d8dd"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N.S. Equipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="103" width="55" height="11" uuid="6699216c-7467-46eb-b3e5-52a1e66e45c3"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N.S. Equipo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="42" y="89" width="308" height="11" uuid="0c9dd73a-6ab1-4962-bb2d-f11e5d468476"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Equipo} + " " + $F{Marca} + " " + $F{Modelo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="182" y="153" width="168" height="75" uuid="fe0e7244-e934-4a69-9f2d-5308e564a881"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Observaciones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="140" width="79" height="11" uuid="d82779e7-4e51-41ed-93d0-ff2c21ec279b"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fallas del equipo:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="3" y="153" width="169" height="75" uuid="fa1bac66-ee8a-4719-a8a8-4841e86d5785"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fallas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="182" y="140" width="70" height="11" uuid="7c6445a3-7d7a-49fc-ac05-a80eed84e7f9"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observaciones:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="236" width="283" height="14" uuid="97fae1a3-4585-43b2-b636-68115428a7d1"/>
+			</rectangle>
+			<textField>
+				<reportElement x="287" y="252" width="63" height="11" uuid="09e171e0-0c00-4794-811c-0350ba5d4a16"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Precio} + $F{Precio2} + $F{Precio3} + $F{Precio4}) + ".00"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="22" y="486" width="150" height="1" uuid="de2fd9e5-7d52-488f-8521-88ed6aa76084"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="237" width="59" height="11" uuid="f66c8212-c66a-4177-b629-b3e5776a67b3"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presupuesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="237" width="35" height="11" uuid="52bd73a7-3640-4f5f-8f04-9dc919bd552c"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="22" y="487" width="150" height="10" uuid="35ac238b-07e9-4982-85d2-0bb0447ad812"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Empleado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="207" y="488" width="149" height="10" uuid="9f50dd1f-a484-4ca9-aee5-54e807c2d5f1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aceptación del ciente]]></text>
+			</staticText>
+			<line>
+				<reportElement x="207" y="487" width="150" height="1" uuid="8002f56b-b10d-4670-9936-d02be1ae68cf"/>
+			</line>
+			<textField>
+				<reportElement x="3" y="252" width="276" height="11" uuid="0fd58cbb-963f-4404-8e88-762827e109fd"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Servicio}+" "+$F{Servicio2}+" "+$F{Servicio3}+" "+ $F{Servicio4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="270" width="356" height="86" uuid="448c148f-765b-4a2b-89c3-bafb5c0189c4"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NOTA:  EN CASO DE FACTURACIÓN SE AUMENTA EL I.V.A. (16%) DEL PRECIO MENCIONADO. MADBIT S.A. de C.V. NO SE HACE RESPONSABLE POR EQUIPOS DEJADOS 60 DÍAS DESPUÉS DE SU REPARACIÓN Y/O DIAGNÓSTICO. LA GARANTÍA PERDERÁ VALIDEZ SI EL EQUIPO ES INTERVENIDO FUERA DEL ESTABLECIMIENTO POR PERSONAL NO AUTORIZADO. LAS LICENCIAS DE SOFTWARE SON PERSONALES, ES RESPONSABILIDAD DEL CLIENTE SEGUIR LOS LINEAMIENTOS DEL FABRICANTE. EL COSTO MÍNIMO POR DIAGNÓSTICO ES DE 180 PESOS M/N. EN CASO DE ACEPTAR LA REPARACIÓN, ESTE SERÁ GRATUITO. NO HAY GARANTÍA EN INSTALACIÓN DE SOFTWARE.LA GARANTÍA DEL SERVICIO ES SOLO SOBRE LAS PARTES CAMBIADAS O REPARADAS.LA GARANTÍA PERDERÁ VALIDEZ SI EL EQUIPO SE OPERA DE FORMA INADECUADA, SE CAE O MOJA.TODO TRABAJO TIENE UN MES DE GARANTÍA EN SERVICIO Y EN LAS PARTES VARIARÁ EN FUNCIÓN DEL PROVEEDOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="103" width="55" height="11" uuid="261c2ac2-3197-4dd6-b29d-214dba4106c8"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N.S. Batería:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="240" y="103" width="110" height="11" uuid="9da2254e-4418-4b55-8e7e-60088f2768e8"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N.S. Bateria}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="111" y="118" width="65" height="11" uuid="228eeda4-2ce7-4a97-a819-b04469c133e0"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N.S. Cargador:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="181" y="118" width="112" height="11" uuid="db7d01ab-d3ab-4eb8-aa28-cadc86ddff77"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N.S. Cargador}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+</jasperReport>
